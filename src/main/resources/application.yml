@@ -21,3 +21,14 @@ spring:
       ddl-auto: update
 server.error.include-message: always
 server.error.include-binding-errors: always
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    com.yourpackage: TRACE
+  file:
+    path: logs/myapp.log
+    backup:
+      path: logs/myapp.log.zip
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"

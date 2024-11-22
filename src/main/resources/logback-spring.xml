@@ -1,0 +1,27 @@
+<configuration>
+
+  <!-- Set the default log level -->
+  <logger name="org.springframework.web" level="DEBUG" />
+
+  <!-- Console log appender -->
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{ISO8601} - %highlight(%-5level) - [%X{requestId}] - [%blue(%c{}.%M:%L)]: %msg%n%throwable</pattern>
+    </encoder>
+  </appender>
+
+  <!-- File log appender -->
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>logs/myapp.log</file>
+    <encoder>
+      <pattern>%d{ISO8601} - %highlight(%-5level) - [%X{requestId}] - [%blue(%c{}.%M:%L)]: %msg%n%throwable</pattern>
+    </encoder>
+  </appender>
+
+  <!-- Root logger configuration -->
+  <root level="INFO">
+    <appender-ref ref="CONSOLE" />
+    <appender-ref ref="FILE" />
+  </root>
+
+</configuration>

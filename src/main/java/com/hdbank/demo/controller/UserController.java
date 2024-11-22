@@ -3,6 +3,7 @@ package com.hdbank.demo.controller;
 import com.hdbank.demo.model.HdBankData;
 import com.hdbank.demo.model.Response;
 import com.hdbank.demo.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -14,6 +15,7 @@ import javax.validation.Valid;
 
 @Validated
 @RestController
+@Slf4j
 public class UserController {
 
     @Autowired
